@@ -56,7 +56,7 @@ app.get('/delete/:id', (req, res)=>{
   })
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT ||port, () => {
   console.log('port is running in 8000')
 });
 
