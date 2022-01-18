@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const favicon = require('serve-favicon');
 
 
 const port = 8000;
@@ -10,7 +11,7 @@ const port = 8000;
  mongoose.connect(process.env.DB||"mongodb://127.0.0.1:27017/myUrlShortener", { useNewUrlParser: true, useUnifiedTopology: true });
 
 const { UrlModel } = require('./models/urlshort');
-const favicon = require('serve-favicon');
+
 
 // Middleware
 
