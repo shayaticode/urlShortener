@@ -2,14 +2,18 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
+
 const port = 8000;
 
 
  mongoose.connect(process.env.DB||"mongodb://127.0.0.1:27017/myUrlShortener", { useNewUrlParser: true, useUnifiedTopology: true });
 
 const { UrlModel } = require('./models/urlshort');
+const favicon = require('serve-favicon');
 
 // Middleware
+app.use(favicon(path.join(__dirname, 'public', 'logo.ico')));
 app.use(express.static('public'));
 app.set('view engine', "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
