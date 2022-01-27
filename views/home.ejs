@@ -29,12 +29,12 @@
           <% for(let i=0; i< urlResult.length; i++) { %>
             <div class="col-lg-3">
                 <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Total Click : <%= urlResult[i].clickCount %></div>
+                    
                     <div class="card-body">
                       <h6 class="card-title">
                     <a href="<%= process.env.HOST_URL+'/'+urlResult[i].shortUrl %>" target = "_blank" style="color: rgb(255, 79, 79);" >http://localhost:8000/<%= urlResult[i].shortUrl %></a>
                       </h6>
-                      <p class="card-text"><%= urlResult[i].longUrl %></p>
+                      
                       <a href="/delete/<%= urlResult[i].id %>" class="btn btn-sm btn-danger">Remove</a>
                     </div>
                   </div>
