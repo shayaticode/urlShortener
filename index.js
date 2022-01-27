@@ -41,18 +41,18 @@ app.post('/create', (req, res) => {
     })
 });
 
-app.get('/:urlId', (req,res)=>{
-  UrlModel.findOne({shortUrl : req.params.urlId}, (err, data)=>{
-    //if(err) throw err;
+// app.get('/:urlId', (req,res)=>{
+//   UrlModel.findOne({shortUrl : req.params.urlId}, (err, data)=>{
+//     //if(err) throw err;
 
-    UrlModel.findByIdAndUpdate({_id: data?.id}, {$inc:{clickCount : 1}}, (err,data)=>{
-      //if(err) throw err;
-    res.redirect(data?.longUrl);
+//     UrlModel.findByIdAndUpdate({_id: data?.id}, {$inc:{clickCount : 1}}, (err,data)=>{
+//       //if(err) throw err;
+//     res.redirect(data?.longUrl);
 
-    })
+//     })
     
-  })
-})
+//   })
+// })
 
 app.get('/delete/:id', (req, res)=>{
   UrlModel.findByIdAndDelete({_id:req?.params?.id}, (err,deleteData)=>{
