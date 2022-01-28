@@ -11,10 +11,6 @@ const UrlSchema = mongoose.Schema({
 shortUrl : {
     type : String,
     unique : true
-},
-clickCount :{
-    type : Number,
-    default : 0
 }
 
 })
