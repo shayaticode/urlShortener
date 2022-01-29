@@ -36,7 +36,7 @@ app.post('/create', (req, res) => {
       return
     }
     let urlShort = new UrlModel({
-      longUrl : req.body.longurl,
+      longUrl : url,
       shortUrl : generateUrl()
     })
     urlShort.save(function(err, data){
