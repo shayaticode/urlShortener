@@ -29,8 +29,12 @@ app.get('/', (req, res) => {
 });
 
 app.post('/create', (req, res) => {
-
-    
+    // read url
+    const url = req?.body?.longurl
+    if(!url){
+      res.redirect('/');
+      return
+    }
     let urlShort = new UrlModel({
       longUrl : req.body.longurl,
       shortUrl : generateUrl()
